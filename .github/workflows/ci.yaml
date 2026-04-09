@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/intranet-newdeal:latest .
+        run: docker build -t aidara05/intranet-newdeal:latest .
 
   security-scan:
     name: Job2 - Scan securite Trivy
@@ -50,9 +50,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Login Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        run: echo "passer123" | docker login -u "aidara05" --password-stdin
 
       - name: Build et Push
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/intranet-newdeal:latest .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/intranet-newdeal:latest
+          docker build -t aidara05/intranet-newdeal:latest .
+          docker push aidara05/intranet-newdeal:latest
